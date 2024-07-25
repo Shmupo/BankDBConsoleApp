@@ -53,6 +53,9 @@ If you wish to change the alias of the database, alter the file src/main/resourc
 hibernate.connection.url with the URL of your database
 
 Ensure MySQL80 server is running
+
+If using Maven, allow maven to FIRST configure the project to apply dependencies to the project structure in IntelliJ before executing.
+
 Run Main inside Bank.java
 
 ## Authors

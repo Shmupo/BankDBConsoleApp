@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <CustomLevels>
+        <CustomLevel name="BEVENT" intLevel="50" />
+        <CustomLevel name="TRANSACTION" intLevel="1" />
+    </CustomLevels>
+
+
+    <Appenders>
+        <RollingFile name="eventFile"
+                     fileName="src/main/logs/events.log"
+                     filePattern="src/main/logs/events-%i.log"
+                     ignoreExceptions="false">
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} %p %m%n</Pattern>
+            </PatternLayout>
+            <Filters>
+                <LevelRangeFilter maxLevel="BEVENT" minlevel="BEVENT" />
+            </Filters>
+            <Policies>
+                <OnStartupTriggeringPolicy minSize="60"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="transactionFile"
+                     fileName="src/main/transactionlogs/transactions.log"
+                     filePattern="src/main/transactionlogs/transactions-%i.log"
+                     ignoreExceptions="false">
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} %p %m%n</Pattern>
+            </PatternLayout>
+            <Filters>
+                <LevelRangeFilter maxLevel="TRANSACTION" minlevel="TRANSACTION" />
+            </Filters>
+            <Policies>
+                <OnStartupTriggeringPolicy minSize="60"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+
+    <Loggers>
+        <Root level="trace">
+            <AppenderRef ref="eventFile" level="BEVENT"/>
+            <AppenderRef ref="transactionFile" level="TRANSACTION"/>
+        </Root>
+    </Loggers>
+</Configuration>
