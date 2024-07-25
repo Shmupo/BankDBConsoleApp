@@ -41,24 +41,24 @@ Maven Dependencies :
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+Install the files into a folder and add them to an IDE or Code Editor.
+For this application, it was developed using IntelliJ.
 
 ### Executing program
 
+The name of the pre-configured database url is 'jdbc:mysql://localhost:3306/bankdb'
+If not created, create a database within MySQL80 with the same alias and port 3306 (this should be the default port).
+
+If you wish to change the alias of the database, alter the file src/main/resources/hibernate.cfg.xml property
+hibernate.connection.url with the URL of your database
+
+Ensure MySQL80 server is running
 Run Main inside Bank.java
-
-
-## Help
-
-
 
 ## Authors
 
 Andrew Doan
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+AKA Shmupo
 
 ## Version History
 
@@ -67,4 +67,4 @@ ex. [@DomPizzie](https://twitter.com/dompizzie)
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the LICENSE.md file for details
